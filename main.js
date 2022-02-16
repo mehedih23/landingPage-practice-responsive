@@ -18,6 +18,21 @@ document.getElementById('btn').addEventListener('click', function () {
     li.classList.add('item-list');
     ul.appendChild(li);
 
+    const itemList = document.getElementsByClassName('item-list');
+    if (itemList.length == 8) {
+        document.getElementById('btn').setAttribute('disabled', '');
+    }
+    /*   for (const itemL of itemList) {
+          // debugger;
+          let element = itemL;
+  
+          if (element == 5) {
+              // document.getElementById('btn').setAttribute('disabled', '');
+  
+          }
+          break;
+      } */
+
 
 });
 
@@ -26,10 +41,9 @@ document.getElementById('add-count').addEventListener('click', function () {
 
     const addCount = document.getElementById('count');
     let addCountValue = addCount.value;
-
     addCountValue = parseInt(addCountValue) + 1;
     addCount.value = addCountValue;
-    console.log(addCount.value);
+
 
     if (addCount.value == 5) {
         document.getElementById('add-count').setAttribute('disabled', '');
